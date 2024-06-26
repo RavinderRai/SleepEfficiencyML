@@ -16,7 +16,7 @@ class DataTransformationTrainingPipeline:
             
             if status == "True":
                 config = ConfigurationManager()
-                data_transformation_config = config.get_data_validation_config()
+                data_transformation_config = config.get_data_transformation_config()
                 data_transformation = DataTransformation(config=data_transformation_config)
                 data_transformation.train_test_splitting()
 
