@@ -15,4 +15,4 @@ COLUMNS:
   Exercise frequency: float64
 
 TARGET_COLUMN:
-  Sleep efficiency
+  name: Sleep efficiency
