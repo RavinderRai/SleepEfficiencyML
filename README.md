@@ -55,10 +55,19 @@ open up your local host and port
 ### dagshub
 [dagshub](https://dagshub.com/)
 
-import dagshub
-dagshub.init(repo_owner='RavinderRai', repo_name='SleepEfficiencyML', mlflow=True)
+MLFLOW_TRACKING_URI=https://dagshub.com/RavinderRai/SleepEfficiencyML.mlflow \
+MLFLOW_TRACKING_USERNAME=RavinderRai \
+MLFLOW_TRACKING_PASSWORD=98ec3895bb5f99c79771a8d5e985b6c4917c40c7 \
+python script.py
 
-import mlflow
-with mlflow.start_run():
-  mlflow.log_param('parameter name', 'value')
-  mlflow.log_metric('metric name', 1)
+Run this to export as env variables:
+
+```bash
+
+export MLFLOW+TRACKING_URI=https://dagshub.com/RavinderRai/SleepEfficiencyML.mlflow
+
+export MLFLOW_TRACKING_USERNAME=RavinderRai
+
+export MLFLOW_TRACKING_PASSWORD=98ec3895bb5f99c79771a8d5e985b6c4917c40c7
+
+```
