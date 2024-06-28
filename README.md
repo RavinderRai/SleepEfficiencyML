@@ -48,7 +48,7 @@ open up your local host and port
 
 [Documentation](https://mlflow.org/docs/latest/index.html)
 
-##### cmd
+#### cmd
 - mlflow ui
 
 
@@ -61,6 +61,7 @@ MLFLOW_TRACKING_PASSWORD=98ec3895bb5f99c79771a8d5e985b6c4917c40c7 \
 python script.py
 
 Run this to export as env variables:
+(use `set` instead of `export` if in anaconda prompt)
 
 ```bash
 

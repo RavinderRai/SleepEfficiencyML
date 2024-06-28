@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RaviB/GitHub/SleepEfficiencyML/mlruns/0/567160aa4a4b4ed0b8f900271ab73cd5/artifacts
+end_time: 1719496830768
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 567160aa4a4b4ed0b8f900271ab73cd5
+run_name: likeable-tern-116
+run_uuid: 567160aa4a4b4ed0b8f900271ab73cd5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719496826298
+status: 3
+tags: []
+user_id: RaviB
