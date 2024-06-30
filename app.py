@@ -96,14 +96,13 @@ def index():
                 'Exercise frequency'
             ]
 
-            #data = np.array(data).reshape(1, 10)
-
             data = pd.DataFrame([data], columns=list(feature_names))
 
             obj = PredictionPipeline()
-            predict = obj.predict(data)
+            predict = obj.predict(data)[0]
+            formatted_prediction = f"{predict:.2f}"
 
-            return render_template('results.html', prediction = str(predict))
+            return render_template('results.html', prediction = formatted_prediction)
 
         except Exception as e:
             print('The Exception message is: ', e)

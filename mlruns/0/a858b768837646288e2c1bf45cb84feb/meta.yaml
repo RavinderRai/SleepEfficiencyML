@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RaviB/GitHub/SleepEfficiencyML/mlruns/0/a858b768837646288e2c1bf45cb84feb/artifacts
+end_time: 1719682215674
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a858b768837646288e2c1bf45cb84feb
+run_name: skillful-foal-137
+run_uuid: a858b768837646288e2c1bf45cb84feb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719682209852
+status: 3
+tags: []
+user_id: RaviB

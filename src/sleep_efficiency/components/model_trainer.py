@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 from sleep_efficiency import logger
-from sklearn.linear_model import ElasticNet
+import xgboost as xgb
 import joblib
 from sleep_efficiency.entity.config_entity import ModelTrainerConfig
 
@@ -20,7 +20,15 @@ class ModelTrainer:
         train_y = train_data[[self.config.target_column]]
         test_y = test_data[[self.config.target_column]]
 
-        lr = ElasticNet(alpha=self.config.alpha, l1_ratio=self.config.l1_ratio, random_state=42)
-        lr.fit(train_x, train_y)
+        model = xgb.XGBRegressor(
+            objective='reg:squarederror',
+            random_state=42,
+            n_estimators=self.config.n_estimators,
+            learning_rate=self.config.learning_rate,
+            max_depth=self.config.max_depth,
+            subsample=self.config.subsample,
+            colsample_bytree=self.config.colsample_bytree
+        )
+        model.fit(train_x, train_y)
 
-        joblib.dump(lr, os.path.join(self.config.root_dir, self.config.model_name))
+        joblib.dump(model, os.path.join(self.config.root_dir, self.config.model_name))
