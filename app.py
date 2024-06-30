@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 import os
 import numpy as np
 import pandas as pd
@@ -102,7 +102,16 @@ def index():
             predict = obj.predict(data)[0]
             formatted_prediction = f"{predict:.2f}"
 
-            return render_template('results.html', prediction = formatted_prediction)
+            if predict < 0.6:
+                image_filename = "haunter.jpeg"
+            elif predict < 0.7:
+                image_filename = "drowzee.jpeg"
+            elif predict < 0.8:
+                image_filename = "snorlax.jpeg"
+            else:
+                image_filename = "jigglypuff.jpeg"
+
+            return render_template('results.html', prediction=formatted_prediction, image_filename=image_filename)
 
         except Exception as e:
             print('The Exception message is: ', e)
