@@ -70,15 +70,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Remove conflicting Docker packages
-        run: |
-          sudo apt-get remove -y docker docker-engine docker.io containerd runc
-
-      - name: Install Docker (if necessary)
-        run: |
-          curl -fsSL https://get.docker.com -o get-docker.sh
-          sudo apt-get install -y docker.io
-
       - name: Configure Docker daemon permissions
         run: |
           sudo usermod -aG docker $USER
