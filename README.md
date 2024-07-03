@@ -1,5 +1,36 @@
 # SleepEfficiencyML
 
+[Live app](http://54.226.49.20:8080)
+
+![Project Demo](SleepEfficiencyGIF.gif)
+
+## Overview
+
+This project aims to predict sleep efficiency using a machine learning model and deploy a simple web application for user interaction. The data science aspects are relatively straightforward, but a lot of the focus here was on adhering to MLOps and software engineering best practices to create a robust and maintainable codebase.
+
+## Features
+
+### Data Collection and Preprocessing:
+
+Data sourced from Kaggle: https://www.kaggle.com/datasets/equilibriumm/sleep-efficiency
+
+Preprocessing was straightforward. The dataset only had a little over 400 rows so to keep things simple, some features were converted to binary features instead. A few were left as is, and only the hour of the day for bedtime and wakeup time were used (the exact day has no value since we aren't doing anything time-series related here).
+
+### Model Training:
+
+XGBoost regressor was used, with ridsearch for optimal hyperparameters. Since MLOps best practices were follows, pipelines for each step of the data science lifecycle were done, and MLFlow was used to track the relevant training and evaluation parts. Code for CI/CD pipelines are there as well although are not currently being used since there will likely be no further updates to this project. 
+
+### Web Application:
+
+Deployed a simple yet aesthetic web app using Flask and Gunicorn. Interactive user interface allowing users to input sleep-related parameters and receive predictions. Displays results with corresponding visual feedback (fun AI generated Pokémon images based on sleep efficiency ranges - of which there are 4).
+
+
+### References/Acknowledgements
+
+Project structure follows from the codebase in this video: https://www.youtube.com/watch?v=pxk1Fr33-L4
+
+Live app deployment steps follow from this video, although some adjustments were made since Flask (and gunicorn) was used for the web app rather than Streamlit: https://www.youtube.com/watch?v=oynd7Xv2i9Y&t=487s
+
 ## Workflows
 
 1. Update config.yaml
